@@ -8,21 +8,5 @@
 </head>
 <body>
   <h1>input-elements-ours</h1>
-  <div class="container">
-    <input type="text" placeholder="テキストを入力">
-    <button>赤色にする</button>
-
-  </div>
-  <script>
-    const input = document.querySelector('input');
-    const h1 = document.querySelector('h1');
-    input.addEventListener('input', () => {
-      h1.textContent = input.value;
-    });
-    const button = document.querySelector('button');
-    button.addEventListener('click', () => {
-      h1.style.color = 'red';
-    });
-  </script>
 </body>
 </html>
