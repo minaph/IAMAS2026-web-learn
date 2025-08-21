@@ -8,5 +8,16 @@
 </head>
 <body>
   <h1>input-elements-ours</h1>
+  <div class="container">
+    <input type="text" placeholder="テキストを入力">
+
+  </div>
+  <script>
+    const input = document.querySelector('input');
+    const h1 = document.querySelector('h1');
+    input.addEventListener('input', () => {
+      h1.textContent = input.value;
+    });
+  </script>
 </body>
 </html>
