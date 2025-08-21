@@ -8,5 +8,34 @@
 </head>
 <body>
   <h1>input-elements-ours</h1>
+  <div class="container">
+    <input type="text" placeholder="テキストを入力">
+    <button>赤色にする</button>
+    <!-- カラー選択 -->
+    <select name="color" id="color">
+      <option value="red">赤</option>
+      <option value="blue">青</option>
+      <option value="green">緑</option>
+    </select>
+
+    <p>上記は、サンプルです。<strong>タイトルの色や内容</strong>を変更することができます</p>
+
+  </div>
+  <script>
+    const input = document.querySelector('input');
+    const h1 = document.querySelector('h1');
+    input.addEventListener('input', () => {
+      h1.textContent = input.value;
+    });
+    const button = document.querySelector('button');
+    button.addEventListener('click', () => {
+      h1.style.color = 'red';
+    });
+
+    const select = document.querySelector('select');
+    select.addEventListener('change', () => {
+      h1.style.color = select.value;
+    });
+  </script>
 </body>
 </html>
