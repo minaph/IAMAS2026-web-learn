@@ -10,8 +10,78 @@
   <h1>input-elements-ours</h1>
   <div class="container">
     <input type="text" placeholder="テキストを入力">
-    <button>赤色にする</button>
+    <button>色を変える</button>
+    <select>
+      <option value="red">赤</option>
+      <option value="green">緑</option>
+      <option value="blue">青</option>
+    </select>
 
+    <section class="panel">
+      <h2 class="section-title">選択系 input</h2>
+      <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div class="field">
+          <label>checkbox</label>
+          <div class="inline">
+            <label class="inline"><input type="checkbox"> A</label>
+            <label class="inline"><input type="checkbox"> B</label>
+            <label class="inline"><input type="checkbox"> C</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>radio</label>
+          <div class="inline" role="radiogroup" aria-label="sample radios">
+            <label class="inline"><input type="radio" name="r1"> 赤</label>
+            <label class="inline"><input type="radio" name="r1"> 緑</label>
+            <label class="inline"><input type="radio" name="r1"> 青</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="select">select</label>
+          <select id="select">
+            <option>選択してください</option>
+            <option>One</option>
+            <option>Two</option>
+            <option>Three</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="select-multiple">select multiple</label>
+          <select id="select-multiple" multiple size="4">
+            <option>Apple</option>
+            <option>Banana</option>
+            <option>Cherry</option>
+            <option>Durian</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="range">range</label>
+          <input id="range" type="range" min="0" max="100" value="40">
+        </div>
+        <div class="field">
+          <label for="color">color</label>
+          <input id="color" type="color" value="#2563eb">
+        </div>
+      </div>
+    </section>
+  </div>
+  <div>
+    <section class="checkbox">
+      <h2>checkbox</h2>
+      <label>checkbox</label>
+      <div class="inline">
+        <label class="inline"><input type="checkbox"> A</label>
+        <label class="inline"><input type="checkbox"> B</label>
+        <label class="inline"><input type="checkbox"> C</label>
+      </div>
+      <h2>radio</h2>
+      <label>select</label>
+      <div class="inline">
+        <label class="inline"><input type="radio" name="r1"> 赤</label>
+        <label class="inline"><input type="radio" name="r2"> 緑</label>
+        <label class="inline"><input type="radio" name="r3"> 青</label>
+      </div>
+    </section>
   </div>
   <script>
     const input = document.querySelector('input');
