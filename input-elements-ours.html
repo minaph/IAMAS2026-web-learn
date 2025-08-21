@@ -21,7 +21,21 @@
     <p>上記は、サンプルです。<strong>タイトルの色や内容</strong>を変更することができます</p>
 
   </div>
-  <script>
+  <h2 class="section-title">選択系 input</h2>
+  <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 14px;">
+    <div class="field">
+      <label>checkbox</label>
+      <div class="inline">
+        <label class="inline"><input type="checkbox"> A</label>
+        <label class="inline"><input type="checkbox"> B</label>
+        <label class="inline"><input type="checkbox"> C</label>
+      </div>
+    </div>
+    <div class="field"></div>
+    </div>
+
+
+<script>
     const input = document.querySelector('input');
     const h1 = document.querySelector('h1');
     input.addEventListener('input', () => {
