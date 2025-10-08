@@ -1,0 +1,10 @@
+<button id="helloBtn">クリックして挨拶</button>
+<p id="message"></p>
+
+<script>
+  const btn = document.getElementById("helloBtn");
+  btn.addEventListener("click", () => {
+    document.getElementById("message").textContent =
+      "こんにちは！JavaScriptで操作しています。";
+  });
+</script>
