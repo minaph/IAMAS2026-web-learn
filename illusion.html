@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <canvas id="canvas" width="260" height="130" style="display: none"></canvas>
+    <script>
+      const canvas = document.querySelector("canvas");
+      if (!canvas) {
+        throw new Error();
+      }
+      const kakishibu = {
+        h: 17,
+        s: 63.5,
+        b: 62.4
+      }
+      const diff = 20;
+      const front = {
+        h: kakishibu.h,
+        s: 75,
+        b: 95 / 2
+      }
+
+      const back = {
+        h: kakishibu.h + 10,
+        s: 60,
+        b: 70 / 2
+      }
+      const ctx = canvas.getContext("2d");
+      // ctx.fillStyle = "rgb(108, 7, 246)";
+      ctx.fillStyle = `hsl(${front.h} ${front.s}% ${front.b}%)`;
+      // ctx.fillRect(0, 0, 20, 20);
+      ctx.font = "bold 80px sans-serif";
+      ctx.fillText("余 熱", 0, 90);
+      const url = canvas.toDataURL();
+      document.body.style.backgroundImage = `url(${url})`;
+      document.body.style.backgroundColor = `hsl(${back.h} ${back.s}% ${back.b}%)`;
+    </script>
+  </body>
+</html>
