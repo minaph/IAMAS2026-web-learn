@@ -12,7 +12,43 @@
     />
   </head>
   <body>
-    <canvas id="canvas" width="260" height="130" style="display: none"></canvas>
+    <canvas id="canvas" width="220" height="110" style="display: none"></canvas>
+    <style>
+      @property --hue {
+        syntax: "<angle>";
+        inherits: false;
+        initial-value: 0deg;
+      }
+
+      body {
+        --hue: 0deg;
+        background-color: hsl(var(--hue) 37.8% 44.1%);
+        animation: hueAnim 100s linear infinite;
+      }
+
+      body::after {
+        --hue: 0deg;
+        content: "|";
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        font-size: 32px;
+        rotate: var(--hue);
+        animation: hueAnim 100s linear infinite;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        text-align: center;
+      }
+
+      @keyframes hueAnim {
+        to {
+          --hue: 360deg;
+        }
+      }
+    </style>
     <script>
       const canvas = document.querySelector("canvas");
       if (!canvas) {
@@ -21,29 +57,45 @@
       const kakishibu = {
         h: 17,
         s: 63.5,
-        b: 62.4
-      }
+        b: 62.4,
+      };
       const diff = 20;
       const front = {
         h: kakishibu.h,
         s: 75,
-        b: 95 / 2
-      }
+        b: 95 / 2,
+      };
 
       const back = {
         h: kakishibu.h + 10,
         s: 60,
-        b: 70 / 2
-      }
+        b: 70 / 2,
+      };
+
+      const bad_apple_back = {
+        h: 225.9,
+        s: 37.8,
+        b: 44.1,
+      };
+
+      const bad_apple_front = {
+        h: 261.9,
+        s: 92.7,
+        b: 51.4,
+      };
       const ctx = canvas.getContext("2d");
       // ctx.fillStyle = "rgb(108, 7, 246)";
-      ctx.fillStyle = `hsl(${front.h} ${front.s}% ${front.b}%)`;
+      ctx.fillStyle = `hsl(${front.h} ${front.s}% ${
+        front.b
+      }%)`;
       // ctx.fillRect(0, 0, 20, 20);
       ctx.font = "bold 80px sans-serif";
       ctx.fillText("余 熱", 0, 90);
       const url = canvas.toDataURL();
       document.body.style.backgroundImage = `url(${url})`;
-      document.body.style.backgroundColor = `hsl(${back.h} ${back.s}% ${back.b}%)`;
+      /* document.body.style.backgroundColor = `hsl(${100} ${bad_apple_back.s}% ${
+        bad_apple_back.b
+      }%)`; */
     </script>
   </body>
 </html>
