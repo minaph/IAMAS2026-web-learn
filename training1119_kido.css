@@ -1,0 +1,58 @@
+  .box {
+      --ratio: 0.7;
+      width: 200px;
+      height: 240px;
+      flex-direction: column;
+  }
+
+  /* [fd]擬似要素はちょっとしたマークに使うべき */
+  .a-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: calc(var(--ratio) * 100%);
+  }
+
+  .b-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: calc((1 - var(--ratio)) * 100%);
+  }
+
+  .cell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .cell-a1 {
+      background: #fdacac;
+  }
+
+  .cell-b1 {
+      background: #a1a1f3;
+  }
+
+  .cell-a2,
+  .cell-b2 {
+      position: relative;
+      border-right: 0.1rem solid #333;
+      border-top: 0.1rem solid #333;
+      border-bottom: 0.1rem solid #333;
+
+      margin-left: 0.5rem;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+  }
+
+  .cell-a2 ::before,
+  .cell-b2 ::after {
+      position: absolute;
+      border-top: 0.1rem solid #333;
+      right: 10;
+  }
+
+  .cell-a3,
+  .cell-b3 {
+      writing-mode: vertical-rl;
+  }
